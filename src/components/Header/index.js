@@ -1,4 +1,6 @@
 import React from 'react';
+import FormSearch from './../Forms/FormSearch'
+import UserInfo from './../UserInfo';
 
 const Header = () => (
     <header id="main-header" className="banner">
@@ -19,8 +21,10 @@ const Header = () => (
                 <a className="brand" href="/">Minha Loja</a>
             </div>
             <div className="col-12 col-lg-8">
+                <FormSearch />
             </div>
             <div className="col-md-2">
+                <UserInfo />
             </div>
             </div>
             <nav className="nav-primary navbar-expand-lg"></nav>
