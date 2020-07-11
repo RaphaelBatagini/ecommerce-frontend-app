@@ -1,0 +1,60 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/nav';
+@import '../../variables';
+
+.banner {
+  background-color: $primary;
+  color: $white;
+  padding: 10px 0 10px;
+
+  a {
+    color: $white;
+  }
+
+  .nav {
+    margin-top: 10px;
+
+    a {
+      @extend .nav-link;
+    }
+
+    li {
+      @extend .nav-item;
+
+      &:first-child {
+        a {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+
+  .user-info {
+    font-size: 12px;
+  }
+
+  .brand-container {
+    text-align: center;
+
+    @include media-breakpoint-up(lg) {
+      padding-top: 8px;
+      text-align: left;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    &.fixed {
+      position: fixed;
+      width: 100%;
+      z-index: 3;
+      top: 0;
+      padding-bottom: 10px;
+
+      #mainNavbar {
+        display: none !important;
+      }
+    }
+  }
+}

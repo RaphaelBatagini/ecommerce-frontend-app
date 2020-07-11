@@ -1,0 +1,33 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '../../../variables';
+
+.main-search {
+  width: 100%;
+
+  .form-group {
+    width: 90%;
+
+    input {
+      width: 100%;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border: none;
+    }
+  }
+
+  button {
+    width: 10%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: $white;
+    color: $primary;
+    border: 1px solid $white;
+    margin-bottom: 1rem;
+
+    @include media-breakpoint-up(md) {
+      margin-bottom: 0;
+    }
+  }
+}

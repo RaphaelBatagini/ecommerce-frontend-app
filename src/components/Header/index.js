@@ -1,6 +1,7 @@
 import React from 'react';
 import FormSearch from './../Forms/FormSearch'
 import UserInfo from './../UserInfo';
+import './styles.scss';
 
 const Header = () => (
     <header id="main-header" className="banner">

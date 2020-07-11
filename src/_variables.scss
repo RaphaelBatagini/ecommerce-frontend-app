@@ -1,0 +1,19 @@
+// Overwrite boostrap variables
+$primary: gray;
+
+$theme-colors: (
+    'primary': $primary, 
+);
+
+// // Create variables for components
+// :root {
+//     // colors
+//     --primary: $primary;
+//     --white: #fff;
+
+//     // breakpoints
+//     --sm: 576px;
+//     --md: 768px;
+//     --lg: 992px;
+//     --xl: 1200px;
+// }
