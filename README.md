@@ -1,9 +1,10 @@
-# WooCommerce React E-commerce App
+# E-commerce React App for WooCommerce
 
 ## Setup
-1. Provide a WooCommerce install that can be reached by the React E-commerce App;
-2. Generate an API key in WordPress administration `Woocommerce > Settings > Advanced (Tab) > REST API (Tab)`. **Important:** The API key should have read and write permissions!
-3. Create a `.env` file from `.env.example` and add WooCommerce host for API address and the API key and secret;
+1. Provide a WooCommerce environment that can be reached by the React E-commerce App;
+2. On your WooCommerce install the plugin [WooCommerce React App Plugin](https://github.com/RaphaelBatagini/woocommerce-react-app-plugin)
+3. Generate an API key in WordPress administration `Woocommerce > Settings > Advanced (Tab) > REST API (Tab)`. **Important:** The API key should have read and write permissions!
+4. Create a `.env` file from `.env.example` and add WooCommerce host for API address and the API key and secret;
 
 ---
 
