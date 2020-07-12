@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import woocommerce from '../../../services/WooCommerce';
 import Glide from '..';
+import ProductCard from '../../Cards/ProductCard';
 
 export default class CarouselMostRecentProducts extends Component {
   state = {
@@ -50,20 +51,7 @@ export default class CarouselMostRecentProducts extends Component {
           <ul className="glide__slides">
             {products.map(product => (
               <li key="{product.id}"  className="glide__slide">
-                <div className="card">
-                  <img className="card-img-top" 
-                    src={product.images[0].shop_catalog}
-                    alt="Card cap"/>
-                  <div className="card-body">
-                    <h5 className="card-title">{product.name}</h5>
-                    <p className="card-text">{product.description}</p>
-                    <p className="price" 
-                      dangerouslySetInnerHTML={{__html: product.price_html}}></p>
-                    <a href="#" className="btn btn-primary w-100">
-                      Buy
-                    </a>
-                  </div>
-                </div>
+                <ProductCard product={product} />
               </li>
             ))}
           </ul>
