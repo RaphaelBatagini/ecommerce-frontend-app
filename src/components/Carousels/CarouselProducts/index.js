@@ -11,18 +11,23 @@ export default class CarouselProducts extends Component {
 
   componentDidMount() {
     this.htmlClassName = htmlClassName(this.props.name);
-    this.loadProducts(this.props.endpoint);
+    this.loadProducts(this.props.endpoint, this.props.params);
   }
 
-  loadProducts = async (endpoint) => {
-    const response = await woocommerce.get(endpoint);
+  loadProducts = async (endpoint, params = {}) => {
+    const response = await woocommerce.get(endpoint, params);
     this.setState({ products: response.data });
     this.loadCarousel();
   }
 
   loadCarousel = () => {
+    const carousel = document.querySelector('.' + this.htmlClassName);
+    if (!carousel) {
+      return;
+    }
+
     new Glide(
-      document.querySelector('.' + this.htmlClassName),
+      carousel,
       {
         type: 'slider',
         startAt: 0,
@@ -42,7 +47,11 @@ export default class CarouselProducts extends Component {
   }
 
   render() {
-    const { products } = this.state; 
+    const { products } = this.state;
+
+    if (!products.length) {
+      return null;
+    }
 
     return <section className="mt-3">
       <h2>{ this.props.name }</h2>
