@@ -3,6 +3,8 @@ import CarouselProductsMostRecent from '../../components/Carousels/CarouselProdu
 
 export default class Main extends Component {
     render() {
-        return <CarouselProductsMostRecent />;
+        return <div className="container">
+            <CarouselProductsMostRecent />
+        </div>;
     }
 }

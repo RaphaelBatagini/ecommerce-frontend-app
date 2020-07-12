@@ -1,0 +1,17 @@
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '../../variables';
+
+.outer-arrows {
+  .glide__arrow--left {
+    left: -3em;
+  }
+
+  .glide__arrow--right {
+    right: -3em;
+  }
+
+  .glide__arrow {
+    background-color: $primary;
+  }
+}

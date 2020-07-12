@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import woocommerce from '../../../services/WooCommerce';
-// import './styles.scss';
+import Glide from '../';
 
 export default class CarouselProductMostRecent extends Component {
   state = {
@@ -13,8 +13,29 @@ export default class CarouselProductMostRecent extends Component {
 
   loadProducts = async () => {
     const response = await woocommerce.get('products');
-    console.log(response.data);
     this.setState({ products: response.data });
+    this.loadCarousel();
+  }
+
+  loadCarousel = () => {
+    new Glide(
+      document.querySelector('.most-recent'),
+      {
+        type: 'slider',
+        startAt: 0,
+        perView: 5,
+        breakpoints: {
+          769: {
+            type: 'slider',
+            perView: 3.25,
+            focusAt: 0,
+          },
+          425: {
+            perView: 1.25,
+          },
+        },
+      }
+    ).mount();
   }
 
   render() {
