@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import CarouselProductsMostRecent from '../../components/Carousels/CarouselProductsMostRecent'
+import CarouselMostRecentProducts from '../../components/Carousels/CarouselMostRecentProducts'
 
 export default class Main extends Component {
     render() {
         return <div className="container">
-            <CarouselProductsMostRecent />
+            <CarouselMostRecentProducts />
         </div>;
     }
 }

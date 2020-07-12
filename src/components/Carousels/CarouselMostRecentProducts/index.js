@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import woocommerce from '../../../services/WooCommerce';
-import Glide from '../';
+import Glide from '..';
 
-export default class CarouselProductMostRecent extends Component {
+export default class CarouselMostRecentProducts extends Component {
   state = {
     products: []
   }
@@ -14,6 +14,7 @@ export default class CarouselProductMostRecent extends Component {
   loadProducts = async () => {
     const response = await woocommerce.get('products');
     this.setState({ products: response.data });
+    console.log(response.data);
     this.loadCarousel();
   }
 
@@ -44,7 +45,6 @@ export default class CarouselProductMostRecent extends Component {
     return <section className="mt-3">
       <h2>Most recent</h2>
       <hr />
-      <p>Products: {products.length}</p>
       <div className="glide most-recent">
         <div data-glide-el="track" className="glide__track">
           <ul className="glide__slides">
@@ -52,7 +52,7 @@ export default class CarouselProductMostRecent extends Component {
               <li key="{product.id}"  className="glide__slide">
                 <div className="card">
                   <img className="card-img-top" 
-                    src="http://placehold.it/1300x900" 
+                    src={product.images[0].shop_catalog}
                     alt="Card cap"/>
                   <div className="card-body">
                     <h5 className="card-title">{product.name}</h5>
