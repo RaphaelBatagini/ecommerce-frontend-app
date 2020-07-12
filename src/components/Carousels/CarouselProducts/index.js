@@ -22,6 +22,7 @@ export default class CarouselProducts extends Component {
 
   loadCarousel = () => {
     const carousel = document.querySelector('.' + this.htmlClassName);
+    
     if (!carousel) {
       return;
     }
